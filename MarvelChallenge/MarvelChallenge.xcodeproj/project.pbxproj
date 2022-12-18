@@ -25,6 +25,8 @@
 		BE29DAEB294FA0AB00DAB9BD /* Stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAEA294FA0AB00DAB9BD /* Stories.swift */; };
 		BE29DAED294FA0B300DAB9BD /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAEC294FA0B300DAB9BD /* Events.swift */; };
 		BE29DAEF294FA0C200DAB9BD /* CharacterUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAEE294FA0C200DAB9BD /* CharacterUrls.swift */; };
+		BE29DAF1294FC09E00DAB9BD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAF0294FC09E00DAB9BD /* AboutViewController.swift */; };
+		BE29DAF3294FC0AB00DAB9BD /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAF2294FC0AB00DAB9BD /* CharacterListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		BE29DAEA294FA0AB00DAB9BD /* Stories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stories.swift; sourceTree = "<group>"; };
 		BE29DAEC294FA0B300DAB9BD /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		BE29DAEE294FA0C200DAB9BD /* CharacterUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterUrls.swift; sourceTree = "<group>"; };
+		BE29DAF0294FC09E00DAB9BD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		BE29DAF2294FC0AB00DAB9BD /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,8 @@
 		BE29DADB294F9D4700DAB9BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE29DAF0294FC09E00DAB9BD /* AboutViewController.swift */,
+				BE29DAF2294FC0AB00DAB9BD /* CharacterListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,8 +346,10 @@
 				BE29DAA9294F9AFF00DAB9BD /* SceneDelegate.swift in Sources */,
 				BE29DAED294FA0B300DAB9BD /* Events.swift in Sources */,
 				BE29DAE7294FA09500DAB9BD /* CharacterThumbnail.swift in Sources */,
+				BE29DAF1294FC09E00DAB9BD /* AboutViewController.swift in Sources */,
 				BE29DAE3294FA05700DAB9BD /* Character.swift in Sources */,
 				BE29DAEF294FA0C200DAB9BD /* CharacterUrls.swift in Sources */,
+				BE29DAF3294FC0AB00DAB9BD /* CharacterListViewController.swift in Sources */,
 				BE29DAE9294FA09E00DAB9BD /* Comics.swift in Sources */,
 				BE29DADF294F9D7900DAB9BD /* ColorsUtils.swift in Sources */,
 				BE29DADD294F9D6A00DAB9BD /* Constants.swift in Sources */,
