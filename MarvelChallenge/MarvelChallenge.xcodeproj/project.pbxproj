@@ -16,6 +16,9 @@
 		BE29DABE294F9B0300DAB9BD /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DABD294F9B0300DAB9BD /* MarvelChallengeTests.swift */; };
 		BE29DAC8294F9B0300DAB9BD /* MarvelChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAC7294F9B0300DAB9BD /* MarvelChallengeUITests.swift */; };
 		BE29DACA294F9B0300DAB9BD /* MarvelChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAC9294F9B0300DAB9BD /* MarvelChallengeUITestsLaunchTests.swift */; };
+		BE29DADD294F9D6A00DAB9BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DADC294F9D6A00DAB9BD /* Constants.swift */; };
+		BE29DADF294F9D7900DAB9BD /* ColorsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DADE294F9D7900DAB9BD /* ColorsUtils.swift */; };
+		BE29DAE1294F9D8F00DAB9BD /* MarveApiInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE29DAE0294F9D8F00DAB9BD /* MarveApiInfo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		BE29DAC3294F9B0300DAB9BD /* MarvelChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE29DAC7294F9B0300DAB9BD /* MarvelChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelChallengeUITests.swift; sourceTree = "<group>"; };
 		BE29DAC9294F9B0300DAB9BD /* MarvelChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BE29DADC294F9D6A00DAB9BD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BE29DADE294F9D7900DAB9BD /* ColorsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsUtils.swift; sourceTree = "<group>"; };
+		BE29DAE0294F9D8F00DAB9BD /* MarveApiInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MarveApiInfo.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,12 @@
 		BE29DAA5294F9AFF00DAB9BD /* MarvelChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				BE29DAD6294F9D1200DAB9BD /* Extensions */,
+				BE29DAD7294F9D1F00DAB9BD /* Models */,
+				BE29DAD8294F9D2A00DAB9BD /* Network */,
+				BE29DAD9294F9D3500DAB9BD /* Utils */,
+				BE29DADB294F9D4700DAB9BD /* View */,
+				BE29DADA294F9D3D00DAB9BD /* ViewModels */,
 				BE29DAA6294F9AFF00DAB9BD /* AppDelegate.swift */,
 				BE29DAA8294F9AFF00DAB9BD /* SceneDelegate.swift */,
 				BE29DAAA294F9AFF00DAB9BD /* ViewController.swift */,
@@ -125,6 +137,51 @@
 				BE29DAC9294F9B0300DAB9BD /* MarvelChallengeUITestsLaunchTests.swift */,
 			);
 			path = MarvelChallengeUITests;
+			sourceTree = "<group>";
+		};
+		BE29DAD6294F9D1200DAB9BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE29DAD7294F9D1F00DAB9BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE29DAD8294F9D2A00DAB9BD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BE29DAD9294F9D3500DAB9BD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BE29DADC294F9D6A00DAB9BD /* Constants.swift */,
+				BE29DADE294F9D7900DAB9BD /* ColorsUtils.swift */,
+				BE29DAE0294F9D8F00DAB9BD /* MarveApiInfo.plist */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BE29DADA294F9D3D00DAB9BD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BE29DADB294F9D4700DAB9BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE29DAB3294F9B0300DAB9BD /* LaunchScreen.storyboard in Resources */,
+				BE29DAE1294F9D8F00DAB9BD /* MarveApiInfo.plist in Resources */,
 				BE29DAB0294F9B0300DAB9BD /* Assets.xcassets in Resources */,
 				BE29DAAE294F9B0000DAB9BD /* Main.storyboard in Resources */,
 			);
@@ -261,6 +319,8 @@
 				BE29DAAB294F9AFF00DAB9BD /* ViewController.swift in Sources */,
 				BE29DAA7294F9AFF00DAB9BD /* AppDelegate.swift in Sources */,
 				BE29DAA9294F9AFF00DAB9BD /* SceneDelegate.swift in Sources */,
+				BE29DADF294F9D7900DAB9BD /* ColorsUtils.swift in Sources */,
+				BE29DADD294F9D6A00DAB9BD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +502,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,9 +511,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Valter-Louro.MarvelChallenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -469,8 +532,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,9 +541,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Valter-Louro.MarvelChallenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
