@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct UrlEndpoints {
+    static let charactersEndpoint = "/characters"
+    static let comicsEndpoint = "/comics"
+}
+
+struct Constants {
+    
+    static let mainUrl = "https://gateway.marvel.com:443/v1/public"
+    static let limitPerPage = 20
+    
+}
