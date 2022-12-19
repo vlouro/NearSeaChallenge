@@ -27,6 +27,8 @@
 		BE29DAEF294FA0C200DAB9BD /* CharacterUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAEE294FA0C200DAB9BD /* CharacterUrls.swift */; };
 		BE29DAF1294FC09E00DAB9BD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAF0294FC09E00DAB9BD /* AboutViewController.swift */; };
 		BE29DAF3294FC0AB00DAB9BD /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAF2294FC0AB00DAB9BD /* CharacterListViewController.swift */; };
+		BE91048B2950B79000B6B1F8 /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE91048A2950B79000B6B1F8 /* UISearchBar+Extension.swift */; };
+		BECA58922950A0F7004DFD41 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECA58912950A0F7004DFD41 /* UINavigationController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		BE29DAEE294FA0C200DAB9BD /* CharacterUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterUrls.swift; sourceTree = "<group>"; };
 		BE29DAF0294FC09E00DAB9BD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BE29DAF2294FC0AB00DAB9BD /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		BE91048A2950B79000B6B1F8 /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
+		BECA58912950A0F7004DFD41 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 		BE29DAD6294F9D1200DAB9BD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BECA58912950A0F7004DFD41 /* UINavigationController+Extension.swift */,
+				BE91048A2950B79000B6B1F8 /* UISearchBar+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,11 +352,13 @@
 				BE29DAA9294F9AFF00DAB9BD /* SceneDelegate.swift in Sources */,
 				BE29DAED294FA0B300DAB9BD /* Events.swift in Sources */,
 				BE29DAE7294FA09500DAB9BD /* CharacterThumbnail.swift in Sources */,
+				BE91048B2950B79000B6B1F8 /* UISearchBar+Extension.swift in Sources */,
 				BE29DAF1294FC09E00DAB9BD /* AboutViewController.swift in Sources */,
 				BE29DAE3294FA05700DAB9BD /* Character.swift in Sources */,
 				BE29DAEF294FA0C200DAB9BD /* CharacterUrls.swift in Sources */,
 				BE29DAF3294FC0AB00DAB9BD /* CharacterListViewController.swift in Sources */,
 				BE29DAE9294FA09E00DAB9BD /* Comics.swift in Sources */,
+				BECA58922950A0F7004DFD41 /* UINavigationController+Extension.swift in Sources */,
 				BE29DADF294F9D7900DAB9BD /* ColorsUtils.swift in Sources */,
 				BE29DADD294F9D6A00DAB9BD /* Constants.swift in Sources */,
 			);
