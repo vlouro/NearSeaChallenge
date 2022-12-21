@@ -196,9 +196,3 @@ class NetworkRequests {
     }
     
 }
-
-extension Date {
-    func toMillis() -> String {
-        return String(Int64(self.timeIntervalSince1970 * 1000))
-    }
-}
