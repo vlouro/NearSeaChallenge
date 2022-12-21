@@ -7,9 +7,12 @@
 
 import UIKit
 
-class CharacterListViewController: UIViewController, UISearchBarDelegate {
+class CharacterListViewController: UIViewController {
     
     let cellIdentifier = "CharacterCollectionViewCell"
+    var isRequesting = false
+    var isSearchEmpty = true
+    var searchedText = ""
     
     private lazy var searchBar: UISearchBar = {
         let sc = UISearchBar()
@@ -76,6 +79,8 @@ class CharacterListViewController: UIViewController, UISearchBarDelegate {
         searchBar.setMagnifyingGlassColorTo(color: .white)
         searchBar.setPlaceholderTextColorTo(color: .white)
         searchBar.setClearButtonColorTo(color: .white)
+        searchBar.delegate = self
+        
     }
     
     func initViewModel() {
@@ -91,14 +96,57 @@ class CharacterListViewController: UIViewController, UISearchBarDelegate {
     
 }
 
+extension CharacterListViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchedText = searchText
+        self.isRequesting = true
+        if isRequesting {
+            viewModel.nextPageForSearch = 0
+            viewModel.characterSearchCellViewModels.removeAll()
+            viewModel.characterSearch.removeAll()
+            viewModel.getCharacterBySearching(stringToSearch: searchText) { shouldReload in
+                if shouldReload {
+                    DispatchQueue.main.async {
+                        self.characterCollectionView.reloadData()
+                    }
+                    self.isSearchEmpty = false
+                    self.isRequesting = false
+                }
+            }
+        }
+        
+        if searchText.isEmpty {
+            isSearchEmpty = true
+            viewModel.nextPageForSearch = 0
+            viewModel.characterSearchCellViewModels.removeAll()
+            viewModel.characterSearch.removeAll()
+            DispatchQueue.main.async {
+                self.characterCollectionView.reloadData()
+            }
+        }
+    }
+
+}
+
 extension CharacterListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.characterCellViewModels.count
+        if isSearchEmpty {
+            return viewModel.characterCellViewModels.count
+        } else {
+            return viewModel.characterSearchCellViewModels.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = characterCollectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as! CharacterCollectionViewCell
-        cell.cellViewModel = self.viewModel.characterCellViewModels[indexPath.row]
+        if isSearchEmpty {
+            cell.cellViewModel = self.viewModel.characterCellViewModels[indexPath.row]
+        } else {
+            cell.cellViewModel = self.viewModel.characterSearchCellViewModels[indexPath.row]
+        }
+        
         return cell
     }
     
@@ -108,19 +156,35 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let characteDetail = CharacterDetailViewController()
-        characteDetail.character = self.viewModel.character[indexPath.row]
+        if isSearchEmpty {
+            characteDetail.character = self.viewModel.character[indexPath.row]
+        } else {
+            characteDetail.character = self.viewModel.characterSearch[indexPath.row]
+        }
+        
         characteDetail.modalPresentationStyle = .fullScreen
         self.navigationController?.present(characteDetail, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.character.count - 10 {
-            viewModel.getMoreCharacters { shouldReload in
-                DispatchQueue.main.async {
-                    self.characterCollectionView.reloadData()
+        if isSearchEmpty {
+            if indexPath.row == viewModel.character.count - 10 {
+                viewModel.getMoreCharacters { shouldReload in
+                    DispatchQueue.main.async {
+                        self.characterCollectionView.reloadData()
+                    }
+                }
+            }
+        } else {
+            if indexPath.row == viewModel.characterSearch.count - 10 {
+                viewModel.getCharacterBySearching(stringToSearch: searchedText) { shouldReload in
+                    DispatchQueue.main.async {
+                        self.characterCollectionView.reloadData()
+                    }
                 }
             }
         }
+       
     }
     
 }

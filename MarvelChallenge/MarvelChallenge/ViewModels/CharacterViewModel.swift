@@ -11,11 +11,15 @@ class CharacterViewModel: NSObject {
     
     var reloadCollectionView: (() -> Void)?
     var character = CharactersList()
+    var characterSearch = CharactersList()
     var nextPage = 0
+    var nextPageForSearch = 0
+    var endOfPageSearch = false
     var isLoading = false
     var endOfPages = false
     
     var characterCellViewModels = [CharacterCellViewModel]()
+    var characterSearchCellViewModels = [CharacterCellViewModel]()
     
     func getCharacters(nextPage: Int, completionHandler: @escaping (Bool) -> Void)  {
         NetworkRequests.shared.getCharacterList(nextResults: nextPage) { (result) in
@@ -44,8 +48,30 @@ class CharacterViewModel: NSObject {
     }
     
     
-    func getCharacterBySearching(stringToSearch: String) {
-       
+    func getCharacterBySearching(stringToSearch: String, completionHandler: @escaping (Bool) -> Void) {
+        NetworkRequests.shared.getCharacterBySearching(characterString: stringToSearch, nextResults: nextPageForSearch) { (result) in
+            switch result {
+                
+            case let .success(characterData):
+                if self.characterSearch.count == characterData.count {
+                    completionHandler(false)
+                }
+                self.characterSearch.append(contentsOf: characterData.results)
+                var vms = [CharacterCellViewModel]()
+                for character in characterData.results {
+                    vms.append(self.createCharacterCellModel(character: character))
+                }
+                self.characterSearchCellViewModels.append(contentsOf: vms)
+                self.nextPageForSearch += 20
+              
+                completionHandler(true)
+               
+                break
+            case .error(_):
+                print("There was an error")
+                completionHandler(false)
+            }
+        }
     }
     
     func getMoreCharacters(completionHandler: @escaping (Bool) -> Void) {

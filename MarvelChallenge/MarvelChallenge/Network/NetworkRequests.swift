@@ -105,15 +105,16 @@ class NetworkRequests {
             }
         }
     }
-  
-    func getCharacterBySearching(characterString: String, nextResults: Int, completionHandler: @escaping (Result<([Character])>) -> Void) {
+
+    func getCharacterBySearching(characterString: String, nextResults: Int, completionHandler: @escaping (Result<(MarvelApiData)>) -> Void) {
+       
         let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
-        let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)?"+"limit=\(Constants.limitPerPage)"+"&offSet=\(nextResults)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
+        let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)?nameStartsWith=\(characterString)"+"&limit=\(Constants.limitPerPage)"+"&offset=\(nextResults)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
         
         self.request(baseUrl: url, encode: true) { (data) in
             do {
                 let response =  try JSONDecoder().decode(MarvelApiResponse.self, from: data)
-                completionHandler(.success(response.data.results))
+                completionHandler(.success(response.data))
                 
             } catch let jsonErr {
                 completionHandler(.error(jsonErr.localizedDescription))
@@ -194,4 +195,10 @@ class NetworkRequests {
         }.joined()
     }
     
+}
+
+extension Date {
+    func toMillis() -> String {
+        return String(Int64(self.timeIntervalSince1970 * 1000))
+    }
 }
