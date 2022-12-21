@@ -19,3 +19,49 @@ struct StoriesItem: Codable {
     let name: String
     let type: String
 }
+
+
+// MARK: - StoriesAPIResponse
+struct StoriesAPIResponse: Codable {
+    let code: Int
+    let status, copyright, attributionText, attributionHTML: String
+    let etag: String
+    let data: StoryData
+}
+
+// MARK: - DataClass
+struct StoryData: Codable {
+    let offset, limit, total, count: Int
+    let results: [StoryResult]
+}
+
+// MARK: - Result
+struct StoryResult: Codable {
+    let id: Int
+    let title, resultDescription: String
+    let resourceURI: String
+    let type: String
+    let modified: Date
+    let thumbnail: Thumbnail?
+    let creators: Creators
+    let characters, series, comics, events: Characters
+    let originalIssue: OriginalIssue
+
+    enum CodingKeys: String, CodingKey {
+        case id, title
+        case resultDescription = "description"
+        case resourceURI, type, modified, thumbnail, creators, characters, series, comics, events, originalIssue
+    }
+}
+
+// MARK: - OriginalIssue
+struct OriginalIssue: Codable {
+    let resourceURI: String
+    let name: String
+}
+
+// MARK: - Item
+struct Item: Codable {
+    let resourceURI: String
+    let name, role: String
+}

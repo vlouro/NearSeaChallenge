@@ -10,16 +10,12 @@ import Foundation
 class CharacterViewModel: NSObject {
     
     var reloadCollectionView: (() -> Void)?
-    var character = Characters()
+    var character = CharactersList()
     var nextPage = 0
     var isLoading = false
     var endOfPages = false
     
-    var characterCellViewModels = [CharacterCellViewModel]() {
-        didSet {
-            reloadCollectionView?()
-        }
-    }
+    var characterCellViewModels = [CharacterCellViewModel]()
     
     func getCharacters(nextPage: Int, completionHandler: @escaping (Bool) -> Void)  {
         NetworkRequests.shared.getCharacterList(nextResults: nextPage) { (result) in

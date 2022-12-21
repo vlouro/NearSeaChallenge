@@ -106,6 +106,12 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
         return CGSize(width: self.view.frame.width, height: 190)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let characteDetail = CharacterDetailViewController()
+        characteDetail.character = self.viewModel.character[indexPath.row]
+        self.navigationController?.pushViewController(characteDetail, animated: false)
+    }
+    
 }
 
 

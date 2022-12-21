@@ -38,7 +38,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     
     var cellViewModel: CharacterCellViewModel? {
         didSet {
-            setCharacterName(name: cellViewModel?.name ?? "")
+            characterNameLabel.setLabelAttributedText(name: cellViewModel?.name ?? "", fontSize: 27, fontWeight: .semibold, lineSpacing: 1.1851851851851851)
             if let imgUrl = cellViewModel?.imageUrl {
                 characterImageView.imageFromServerURL(urlString: imgUrl, PlaceHolderImage: UIImage())
             }
@@ -95,20 +95,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
            professionLabel.text = profile.profession*/
     }
     
-    func setCharacterName(name: String) {
-        let characterNameString = NSMutableAttributedString(
-          string: name,
-          attributes: [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .semibold)
-          ]
-        )
-        let textRange = NSRange(location: 0, length: characterNameString.length)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 1.2222222222222223
-        characterNameString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: textRange)
-        characterNameString.addAttribute(NSAttributedString.Key.kern, value: 0, range: textRange)
-        characterNameLabel.attributedText = characterNameString
-    }
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()

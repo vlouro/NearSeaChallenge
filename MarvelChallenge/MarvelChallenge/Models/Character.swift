@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Characters = [Character]
+typealias CharactersList = [Character]
 
 struct MarvelApiResponse: Decodable {
     let code: Int

@@ -29,12 +29,19 @@
 		BE29DAF3294FC0AB00DAB9BD /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29DAF2294FC0AB00DAB9BD /* CharacterListViewController.swift */; };
 		BE91048B2950B79000B6B1F8 /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE91048A2950B79000B6B1F8 /* UISearchBar+Extension.swift */; };
 		BEA4BEFA2951D651002D9B51 /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4BEF92951D651002D9B51 /* ImageView+Extension.swift */; };
+		BEA4BEFC2951FB48002D9B51 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4BEFB2951FB48002D9B51 /* CharacterDetailViewController.swift */; };
+		BEA4BEFE29520070002D9B51 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4BEFD29520070002D9B51 /* UILabel+Extension.swift */; };
+		BEA4BF0229521530002D9B51 /* ComicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4BF0129521530002D9B51 /* ComicsCollectionViewCell.swift */; };
+		BEA4BF04295220CE002D9B51 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4BF03295220CE002D9B51 /* CharacterDetailViewModel.swift */; };
+		BEA4BF0629522267002D9B51 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4BF0529522267002D9B51 /* Comic.swift */; };
+		BEA4BF08295228D0002D9B51 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4BF07295228D0002D9B51 /* Series.swift */; };
 		BEB330A629511DC100A0FA72 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB330A529511DC100A0FA72 /* NetworkRequests.swift */; };
 		BEB330A9295120DE00A0FA72 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB330A8295120DE00A0FA72 /* CharacterCollectionViewCell.swift */; };
 		BEB330AB295123DF00A0FA72 /* CharacterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB330AA295123DF00A0FA72 /* CharacterCellViewModel.swift */; };
 		BEB330AD2951241500A0FA72 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB330AC2951241500A0FA72 /* CharacterViewModel.swift */; };
 		BEB330AF2951279F00A0FA72 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB330AE2951279F00A0FA72 /* UIView+Extension.swift */; };
 		BECA58922950A0F7004DFD41 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECA58912950A0F7004DFD41 /* UINavigationController+Extension.swift */; };
+		BED4B7B8295273C300DAD817 /* ComicsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED4B7B7295273C300DAD817 /* ComicsCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,12 +88,19 @@
 		BE29DAF2294FC0AB00DAB9BD /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		BE91048A2950B79000B6B1F8 /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 		BEA4BEF92951D651002D9B51 /* ImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extension.swift"; sourceTree = "<group>"; };
+		BEA4BEFB2951FB48002D9B51 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		BEA4BEFD29520070002D9B51 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		BEA4BF0129521530002D9B51 /* ComicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCollectionViewCell.swift; sourceTree = "<group>"; };
+		BEA4BF03295220CE002D9B51 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		BEA4BF0529522267002D9B51 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		BEA4BF07295228D0002D9B51 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		BEB330A529511DC100A0FA72 /* NetworkRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
 		BEB330A8295120DE00A0FA72 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		BEB330AA295123DF00A0FA72 /* CharacterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewModel.swift; sourceTree = "<group>"; };
 		BEB330AC2951241500A0FA72 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		BEB330AE2951279F00A0FA72 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BECA58912950A0F7004DFD41 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		BED4B7B7295273C300DAD817 /* ComicsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +192,7 @@
 				BE91048A2950B79000B6B1F8 /* UISearchBar+Extension.swift */,
 				BEB330AE2951279F00A0FA72 /* UIView+Extension.swift */,
 				BEA4BEF92951D651002D9B51 /* ImageView+Extension.swift */,
+				BEA4BEFD29520070002D9B51 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,6 +206,8 @@
 				BE29DAEA294FA0AB00DAB9BD /* Stories.swift */,
 				BE29DAE8294FA09E00DAB9BD /* Comics.swift */,
 				BE29DAE6294FA09500DAB9BD /* CharacterThumbnail.swift */,
+				BEA4BF0529522267002D9B51 /* Comic.swift */,
+				BEA4BF07295228D0002D9B51 /* Series.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +235,8 @@
 			children = (
 				BEB330AA295123DF00A0FA72 /* CharacterCellViewModel.swift */,
 				BEB330AC2951241500A0FA72 /* CharacterViewModel.swift */,
+				BEA4BF03295220CE002D9B51 /* CharacterDetailViewModel.swift */,
+				BED4B7B7295273C300DAD817 /* ComicsCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -228,6 +247,7 @@
 				BEB330A7295120AC00A0FA72 /* Cells */,
 				BE29DAF0294FC09E00DAB9BD /* AboutViewController.swift */,
 				BE29DAF2294FC0AB00DAB9BD /* CharacterListViewController.swift */,
+				BEA4BEFB2951FB48002D9B51 /* CharacterDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB330A8295120DE00A0FA72 /* CharacterCollectionViewCell.swift */,
+				BEA4BF0129521530002D9B51 /* ComicsCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -375,19 +396,26 @@
 				BE29DAEB294FA0AB00DAB9BD /* Stories.swift in Sources */,
 				BE29DAAB294F9AFF00DAB9BD /* ViewController.swift in Sources */,
 				BE29DAA7294F9AFF00DAB9BD /* AppDelegate.swift in Sources */,
+				BEA4BEFE29520070002D9B51 /* UILabel+Extension.swift in Sources */,
 				BE29DAA9294F9AFF00DAB9BD /* SceneDelegate.swift in Sources */,
 				BEB330AB295123DF00A0FA72 /* CharacterCellViewModel.swift in Sources */,
+				BEA4BF08295228D0002D9B51 /* Series.swift in Sources */,
 				BE29DAED294FA0B300DAB9BD /* Events.swift in Sources */,
+				BEA4BF04295220CE002D9B51 /* CharacterDetailViewModel.swift in Sources */,
 				BE29DAE7294FA09500DAB9BD /* CharacterThumbnail.swift in Sources */,
+				BEA4BF0629522267002D9B51 /* Comic.swift in Sources */,
 				BEB330A9295120DE00A0FA72 /* CharacterCollectionViewCell.swift in Sources */,
 				BEB330A629511DC100A0FA72 /* NetworkRequests.swift in Sources */,
 				BE91048B2950B79000B6B1F8 /* UISearchBar+Extension.swift in Sources */,
 				BEB330AD2951241500A0FA72 /* CharacterViewModel.swift in Sources */,
+				BEA4BEFC2951FB48002D9B51 /* CharacterDetailViewController.swift in Sources */,
 				BE29DAF1294FC09E00DAB9BD /* AboutViewController.swift in Sources */,
+				BEA4BF0229521530002D9B51 /* ComicsCollectionViewCell.swift in Sources */,
 				BE29DAE3294FA05700DAB9BD /* Character.swift in Sources */,
 				BE29DAEF294FA0C200DAB9BD /* CharacterUrls.swift in Sources */,
 				BE29DAF3294FC0AB00DAB9BD /* CharacterListViewController.swift in Sources */,
 				BE29DAE9294FA09E00DAB9BD /* Comics.swift in Sources */,
+				BED4B7B8295273C300DAD817 /* ComicsCellViewModel.swift in Sources */,
 				BECA58922950A0F7004DFD41 /* UINavigationController+Extension.swift in Sources */,
 				BE29DADF294F9D7900DAB9BD /* ColorsUtils.swift in Sources */,
 				BEB330AF2951279F00A0FA72 /* UIView+Extension.swift in Sources */,

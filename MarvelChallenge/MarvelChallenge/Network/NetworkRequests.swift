@@ -120,6 +120,71 @@ class NetworkRequests {
             }
         }
     }
+
+    func getComicsForCharacter(characterId: Int, limit: Int, offset: Int,  completionHandler: @escaping (Result<([ComicResult])>) -> Void) {
+        let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
+        let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)/\(characterId)/comics?"+"limit=\(limit)"+"&offset=\(offset)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
+   
+        self.request(baseUrl: url, encode: true) { (data) in
+            
+            do {
+                let response =  try JSONDecoder().decode(ComicsAPIResponse.self, from: data)
+                completionHandler(.success(response.data.results))
+                
+            } catch let jsonErr {
+                completionHandler(.error(jsonErr.localizedDescription))
+            }
+        }
+    }
+    
+    func getEventsForCharacter(characterId: Int, limit: Int, offset: Int,  completionHandler: @escaping (Result<([EventsResult])>) -> Void) {
+        let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
+        let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)/\(characterId)/events?"+"limit=\(limit)"+"&offset=\(offset)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
+   
+        self.request(baseUrl: url, encode: true) { (data) in
+            
+            do {
+                let response =  try JSONDecoder().decode(EventsAPIResponse.self, from: data)
+                completionHandler(.success(response.data.results))
+                
+            } catch let jsonErr {
+                completionHandler(.error(jsonErr.localizedDescription))
+            }
+        }
+    }
+    
+    func getStoriesForCharacter(characterId: Int, limit: Int, offset: Int,  completionHandler: @escaping (Result<([StoryResult])>) -> Void) {
+        let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
+        let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)/\(characterId)/stories?"+"limit=\(limit)"+"&offset=\(offset)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
+   
+        self.request(baseUrl: url, encode: true) { (data) in
+            
+            do {
+                let response =  try JSONDecoder().decode(StoriesAPIResponse.self, from: data)
+                completionHandler(.success(response.data.results))
+                
+            } catch let jsonErr {
+                completionHandler(.error(jsonErr.localizedDescription))
+            }
+        }
+    }
+    
+    func getSeriesForCharacter(characterId: Int, limit: Int, offset: Int,  completionHandler: @escaping (Result<([SeriesResult])>) -> Void) {
+        let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
+        let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)/\(characterId)/series?"+"limit=\(limit)"+"&offset=\(offset)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
+   
+        self.request(baseUrl: url, encode: true) { (data) in
+            
+            do {
+                let response =  try JSONDecoder().decode(SeriesAPIResponse.self, from: data)
+                completionHandler(.success(response.data.results))
+                
+            } catch let jsonErr {
+                completionHandler(.error(jsonErr.localizedDescription))
+            }
+        }
+    }
+    
     
     func MD5(string: String) -> String {
         let digest = Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data())
