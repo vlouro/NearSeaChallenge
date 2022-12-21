@@ -17,13 +17,11 @@ struct ComicsAPIResponse: Codable {
     let data: ComicData
 }
 
-// MARK: - DataClass
 struct ComicData: Codable {
     let offset, limit, total, count: Int
     let results: [ComicResult]
 }
 
-// MARK: - Result
 struct ComicResult: Codable {
     let id, digitalID: Int
     let title: String

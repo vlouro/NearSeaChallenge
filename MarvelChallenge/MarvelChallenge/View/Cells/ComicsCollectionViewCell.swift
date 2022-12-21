@@ -32,7 +32,7 @@ class ComicsCollectionViewCell: UICollectionViewCell {
         didSet {
             comicNameLabel.setLabelAttributedText(name: cellViewModel?.name ?? "", fontSize: 16, fontWeight: .regular, lineSpacing: 1.5)
             if let imgUrl = cellViewModel?.imageUrl {
-                comicImageView.imageFromServerURL(urlString: imgUrl, PlaceHolderImage: UIImage())
+                comicImageView.imageFromServerURL(urlString: imgUrl, PlaceHolderImage: UIImage(named: "missing_comic") ?? UIImage())
             }
         }
     }

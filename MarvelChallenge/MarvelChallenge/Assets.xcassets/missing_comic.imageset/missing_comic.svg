@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180px" height="240px" viewBox="0 0 180 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>E19BED58-79D1-47BD-A858-5770E1120CA7</title>
+    <defs>
+        <filter x="-13.3%" y="-9.5%" width="126.7%" height="119.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0.0784313725  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Details---Dark" transform="translate(-171.000000, -951.000000)">
+            <g id="missing_comic" filter="url(#filter-1)" transform="translate(186.000000, 966.000000)">
+                <rect id="Rectangle-Copy-13" fill="#D8D8D8" x="0" y="0" width="150" height="210" rx="18"></rect>
+                <path d="M74.2825033,95.8707714 C68.5848732,96.163273 64.0540379,100.931238 64.0540379,106.769689 C64.0540379,108.739496 64.5698018,110.587427 65.4719849,112.182719 L64.3793514,114.30578 C62.881321,112.18043 62,109.579159 62,106.769689 C62,99.5947802 67.747699,93.7777419 74.8378378,93.7777419 C74.9391871,93.7777419 75.0402671,93.7789539 75.1409434,93.7813779 L76.9953785,90 L80.9570161,90 L80.9570161,95.3459653 C84.9588973,97.5459222 87.6756757,101.836889 87.6756757,106.769689 C87.6756757,113.944732 81.9279767,119.761635 74.8378378,119.761635 C72.6737021,119.761635 70.6346041,119.219592 68.8458509,118.262497 L69.7492453,116.393961 C71.2650421,117.216387 72.9975351,117.682881 74.8378378,117.682881 C80.7934845,117.682881 85.6216378,112.796811 85.6216378,106.769689 C85.6216378,103.002855 83.7355731,99.6816419 80.8671073,97.7203189 L80.8671073,108.048777 L77.2467999,104.622522 L77.2467999,96.7943331 L72.7759935,107.418525 L77.2467999,107.418525 L77.2467999,105.712939 L81.4381894,109.655381 L77.1070914,112.982385 L77.1070914,111.221046 L71.2112045,111.221046 L67.3274968,120 L62.5212823,119.905866 L74.2825033,95.8707714 Z" id="missing_icon" fill-opacity="0.3" fill="#000000"></path>
+            </g>
+        </g>
+    </g>
+</svg>

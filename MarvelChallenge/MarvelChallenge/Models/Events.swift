@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias EventsList = [EventsResult]
+
 // MARK: - EventsAPIResponse
 struct EventsAPIResponse: Codable {
     let code: Int
@@ -15,19 +17,17 @@ struct EventsAPIResponse: Codable {
     let data: EventData
 }
 
-// MARK: - DataClass
 struct EventData: Codable {
     let offset, limit, total, count: Int
     let results: [EventsResult]
 }
 
-// MARK: - Result
 struct EventsResult: Codable {
     let id: Int
     let title, resultDescription: String
     let resourceURI: String
     let urls: [URLElement]
-    let modified: Date
+    let modified: String
     let start, end: String
     let thumbnail: Thumbnail
     let creators: Creators

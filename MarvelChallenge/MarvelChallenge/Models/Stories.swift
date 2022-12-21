@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias StoriesList = [StoryResult]
+
 struct Stories: Codable {
     let available: Int
     let collectionURI: String
@@ -29,19 +31,17 @@ struct StoriesAPIResponse: Codable {
     let data: StoryData
 }
 
-// MARK: - DataClass
 struct StoryData: Codable {
     let offset, limit, total, count: Int
     let results: [StoryResult]
 }
 
-// MARK: - Result
 struct StoryResult: Codable {
     let id: Int
     let title, resultDescription: String
     let resourceURI: String
     let type: String
-    let modified: Date
+    let modified: String
     let thumbnail: Thumbnail?
     let creators: Creators
     let characters, series, comics, events: Characters

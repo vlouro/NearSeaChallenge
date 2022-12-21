@@ -40,6 +40,8 @@
 		BEB330AB295123DF00A0FA72 /* CharacterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB330AA295123DF00A0FA72 /* CharacterCellViewModel.swift */; };
 		BEB330AD2951241500A0FA72 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB330AC2951241500A0FA72 /* CharacterViewModel.swift */; };
 		BEB330AF2951279F00A0FA72 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB330AE2951279F00A0FA72 /* UIView+Extension.swift */; };
+		BEC6A8F32953089600FB3039 /* DetailContentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6A8F22953089600FB3039 /* DetailContentCellViewModel.swift */; };
+		BEC6A8F5295311C300FB3039 /* DetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6A8F4295311C300FB3039 /* DetailContentTableViewCell.swift */; };
 		BECA58922950A0F7004DFD41 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECA58912950A0F7004DFD41 /* UINavigationController+Extension.swift */; };
 		BED4B7B8295273C300DAD817 /* ComicsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED4B7B7295273C300DAD817 /* ComicsCellViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +101,8 @@
 		BEB330AA295123DF00A0FA72 /* CharacterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewModel.swift; sourceTree = "<group>"; };
 		BEB330AC2951241500A0FA72 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		BEB330AE2951279F00A0FA72 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BEC6A8F22953089600FB3039 /* DetailContentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentCellViewModel.swift; sourceTree = "<group>"; };
+		BEC6A8F4295311C300FB3039 /* DetailContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentTableViewCell.swift; sourceTree = "<group>"; };
 		BECA58912950A0F7004DFD41 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		BED4B7B7295273C300DAD817 /* ComicsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +241,7 @@
 				BEB330AC2951241500A0FA72 /* CharacterViewModel.swift */,
 				BEA4BF03295220CE002D9B51 /* CharacterDetailViewModel.swift */,
 				BED4B7B7295273C300DAD817 /* ComicsCellViewModel.swift */,
+				BEC6A8F22953089600FB3039 /* DetailContentCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			children = (
 				BEB330A8295120DE00A0FA72 /* CharacterCollectionViewCell.swift */,
 				BEA4BF0129521530002D9B51 /* ComicsCollectionViewCell.swift */,
+				BEC6A8F4295311C300FB3039 /* DetailContentTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				BEB330A9295120DE00A0FA72 /* CharacterCollectionViewCell.swift in Sources */,
 				BEB330A629511DC100A0FA72 /* NetworkRequests.swift in Sources */,
 				BE91048B2950B79000B6B1F8 /* UISearchBar+Extension.swift in Sources */,
+				BEC6A8F5295311C300FB3039 /* DetailContentTableViewCell.swift in Sources */,
 				BEB330AD2951241500A0FA72 /* CharacterViewModel.swift in Sources */,
 				BEA4BEFC2951FB48002D9B51 /* CharacterDetailViewController.swift in Sources */,
 				BE29DAF1294FC09E00DAB9BD /* AboutViewController.swift in Sources */,
@@ -415,6 +422,7 @@
 				BE29DAEF294FA0C200DAB9BD /* CharacterUrls.swift in Sources */,
 				BE29DAF3294FC0AB00DAB9BD /* CharacterListViewController.swift in Sources */,
 				BE29DAE9294FA09E00DAB9BD /* Comics.swift in Sources */,
+				BEC6A8F32953089600FB3039 /* DetailContentCellViewModel.swift in Sources */,
 				BED4B7B8295273C300DAD817 /* ComicsCellViewModel.swift in Sources */,
 				BECA58922950A0F7004DFD41 /* UINavigationController+Extension.swift in Sources */,
 				BE29DADF294F9D7900DAB9BD /* ColorsUtils.swift in Sources */,

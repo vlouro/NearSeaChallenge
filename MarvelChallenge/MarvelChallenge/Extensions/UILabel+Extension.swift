@@ -20,6 +20,7 @@ extension UILabel {
         let textRange = NSRange(location: 0, length: characterNameString.length)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.lineBreakMode = .byTruncatingTail
         characterNameString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: textRange)
         characterNameString.addAttribute(NSAttributedString.Key.kern, value: 0, range: textRange)
         self.attributedText = characterNameString

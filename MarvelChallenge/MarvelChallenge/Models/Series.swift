@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias SeriesList = [SeriesResult]
+
 // MARK: - SeriesAPIResponse
 struct SeriesAPIResponse: Codable {
     let code: Int
@@ -15,13 +17,11 @@ struct SeriesAPIResponse: Codable {
     let data: SeriesData
 }
 
-// MARK: - DataClass
 struct SeriesData: Codable {
     let offset, limit, total, count: Int
     let results: [SeriesResult]
 }
 
-// MARK: - Result
 struct SeriesResult: Codable {
     let id: Int
     let title: String
@@ -30,7 +30,7 @@ struct SeriesResult: Codable {
     let urls: [URLElement]
     let startYear, endYear: Int
     let rating, type: String
-    let modified: Date
+    let modified: String
     let thumbnail: Thumbnail
     let creators: Creators
     let characters: Characters

@@ -109,7 +109,8 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let characteDetail = CharacterDetailViewController()
         characteDetail.character = self.viewModel.character[indexPath.row]
-        self.navigationController?.pushViewController(characteDetail, animated: false)
+        characteDetail.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(characteDetail, animated: true)
     }
     
 }

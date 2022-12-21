@@ -87,16 +87,6 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func setup(with character: Character) {
-        /*
-           profileImageView.image = UIImage(named: profile.imageName)
-           name.text = profile.name
-           locationLabel.text = profile.location
-           professionLabel.text = profile.profession*/
-    }
-    
-    
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         characterNameLabel.attributedText = nil
