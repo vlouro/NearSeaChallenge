@@ -113,6 +113,16 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
         self.navigationController?.present(characteDetail, animated: true)
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.character.count - 10 {
+            viewModel.getMoreCharacters { shouldReload in
+                DispatchQueue.main.async {
+                    self.characterCollectionView.reloadData()
+                }
+            }
+        }
+    }
+    
 }
 
 
