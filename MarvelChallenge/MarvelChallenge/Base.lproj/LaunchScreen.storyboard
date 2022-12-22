@@ -24,29 +24,25 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUL-qt-4Ij">
-                                <rect key="frame" x="180.66666666666666" y="695" width="32" height="32"/>
-                                <color key="backgroundColor" red="0.94117647058823528" green="0.082352941176470587" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="MarvelLogo" translatesAutoresizingMaskIntoConstraints="NO" id="c9M-VI-V04">
+                                <rect key="frame" x="181" y="692" width="31" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="KR8-wG-DfJ"/>
-                                    <constraint firstAttribute="width" constant="32" id="oXX-Wb-t37"/>
+                                    <constraint firstAttribute="width" constant="31" id="VYU-0b-34L"/>
+                                    <constraint firstAttribute="height" constant="31" id="m0G-oR-rVN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vvz-Rv-dJB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-60" id="B16-lT-BMz"/>
                             <constraint firstItem="Zi4-Ye-spW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BC6-6B-jEx"/>
+                            <constraint firstItem="Vvz-Rv-dJB" firstAttribute="top" secondItem="c9M-VI-V04" secondAttribute="bottom" constant="18" id="C6X-Bd-7VU"/>
                             <constraint firstItem="Zi4-Ye-spW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RaJ-MI-6Mb"/>
-                            <constraint firstItem="Vvz-Rv-dJB" firstAttribute="top" secondItem="bUL-qt-4Ij" secondAttribute="bottom" constant="14" id="SoX-EE-jBJ"/>
                             <constraint firstItem="Vvz-Rv-dJB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="V7c-FH-fEx"/>
-                            <constraint firstItem="bUL-qt-4Ij" firstAttribute="centerX" secondItem="Vvz-Rv-dJB" secondAttribute="centerX" id="kjB-fm-zc1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zi4-Ye-spW" secondAttribute="trailing" id="l3h-7v-v1u"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zi4-Ye-spW" secondAttribute="bottom" id="qrd-HT-I36"/>
+                            <constraint firstItem="c9M-VI-V04" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wO4-60-Z3o"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -56,6 +52,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MarvelLogo" width="33" height="33"/>
         <image name="avengers_logo" width="1125" height="2418"/>
     </resources>
 </document>
