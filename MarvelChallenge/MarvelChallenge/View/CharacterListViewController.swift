@@ -43,11 +43,16 @@ class CharacterListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ThemeColors.aboutBackgroundColor
-        
+        self.navigationItem.largeTitleDisplayMode = .automatic
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         var image = UIImage(named: "MarvelLogo")
         image = image?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style:.plain, target: nil, action: nil)
-        self.navigationItem.titleView = self.navigationController?.titleMultiLine(topText: "Avengers,", bottomText: "Assemble!")
+        if let customView = self.navigationController?.titleMultiLine(topText: "Avengers,", bottomText: "Assemble!") {
+            let barButton =  UIBarButtonItem(customView: customView)
+            self.navigationItem.leftBarButtonItem = barButton
+        }
+
         setupSearchBar()
         setupViews()
         initViewModel()
@@ -70,15 +75,13 @@ class CharacterListViewController: UIViewController {
     func setupSearchBar() {
         self.view.addSubview(searchBar)
         NSLayoutConstraint.activate([
-            searchBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            searchBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+            searchBar.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 8),
+            searchBar.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -8),
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
             searchBar.heightAnchor.constraint(equalToConstant: 44)
         ])
-        searchBar.textColor = .white
-        searchBar.setMagnifyingGlassColorTo(color: .white)
-        searchBar.setPlaceholderTextColorTo(color: .white)
-        searchBar.setClearButtonColorTo(color: .white)
+        
+        
         searchBar.delegate = self
         
     }
@@ -91,6 +94,14 @@ class CharacterListViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        searchBar.textColor = .white
+        searchBar.setMagnifyingGlassColorTo(color: .white)
+        searchBar.setPlaceholderTextColorTo(color: .white)
+        searchBar.setClearButtonColorTo(color: .white)
+        searchBar.setPlaceholderTextColorTo(color: .white)
     }
 
     
@@ -188,5 +199,6 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
     }
     
 }
+
 
 

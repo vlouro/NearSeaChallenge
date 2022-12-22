@@ -10,7 +10,7 @@ import UIKit
 
 extension UINavigationController {
     
-    func titleMultiLine(topText: String, bottomText: String) -> UILabel {
+    func titleMultiLine(topText: String, bottomText: String) -> UIView {
   
         let titleParameters = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 36, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor.white]
         
@@ -24,12 +24,13 @@ extension UINavigationController {
         
         let size = title.size()
         
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: -26, width: size.width, height: size.height))
         titleLabel.attributedText = title
         titleLabel.numberOfLines = 0
-        titleLabel.textAlignment = .center
-        
-        return titleLabel
+        titleLabel.textAlignment = .left
+        let view = UIView()
+        view.addSubview(titleLabel)
+        return view
     }
     
 }
