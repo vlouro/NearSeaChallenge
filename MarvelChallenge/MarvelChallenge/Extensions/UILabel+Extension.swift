@@ -12,10 +12,10 @@ extension UILabel {
     
     func setLabelAttributedText(name: String, fontSize: CGFloat, fontWeight: UIFont.Weight, lineSpacing: CGFloat) {
         let characterNameString = NSMutableAttributedString(
-          string: name,
-          attributes: [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
-          ]
+            string: name,
+            attributes: [
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
+            ]
         )
         let textRange = NSRange(location: 0, length: characterNameString.length)
         let paragraphStyle = NSMutableParagraphStyle()

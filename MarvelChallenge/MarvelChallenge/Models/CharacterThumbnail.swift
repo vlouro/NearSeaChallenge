@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - CharacterThumbnail
+
 struct CharacterThumbnail: Codable {
     let path: String
     let thumbnailExtension: String

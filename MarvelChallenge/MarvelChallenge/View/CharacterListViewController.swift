@@ -52,7 +52,7 @@ class CharacterListViewController: UIViewController {
             let barButton =  UIBarButtonItem(customView: customView)
             self.navigationItem.leftBarButtonItem = barButton
         }
-
+        
         setupSearchBar()
         setupViews()
         initViewModel()
@@ -103,12 +103,12 @@ class CharacterListViewController: UIViewController {
         searchBar.setClearButtonColorTo(color: .white)
         searchBar.setPlaceholderTextColorTo(color: .white)
     }
-
+    
     
 }
 
 extension CharacterListViewController: UISearchBarDelegate {
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchedText = searchText
         self.isRequesting = true
@@ -137,7 +137,7 @@ extension CharacterListViewController: UISearchBarDelegate {
             }
         }
     }
-
+    
 }
 
 extension CharacterListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -195,10 +195,7 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
                 }
             }
         }
-       
+        
     }
     
 }
-
-
-

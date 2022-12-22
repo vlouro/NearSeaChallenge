@@ -9,6 +9,7 @@ import Foundation
 
 typealias CharactersList = [Character]
 
+// MARK: - Character Api Response
 struct MarvelApiResponse: Decodable {
     let code: Int
     let status, copyright, attributionText, attributionHTML: String

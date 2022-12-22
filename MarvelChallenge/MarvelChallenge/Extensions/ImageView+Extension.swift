@@ -50,7 +50,7 @@ extension UIImageView {
                     self.image = UIImage()
                 }
             }
-
+            
         }).resume()
     }
 }

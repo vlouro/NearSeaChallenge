@@ -80,7 +80,7 @@ class CharacterDetailViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        label.textColor = ThemeColors.customGrey07Color
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -89,7 +89,7 @@ class CharacterDetailViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        label.textColor = ThemeColors.customGrey07Color
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -98,7 +98,7 @@ class CharacterDetailViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        label.textColor = ThemeColors.customGrey07Color
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -107,7 +107,7 @@ class CharacterDetailViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        label.textColor = ThemeColors.customGrey07Color
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -133,8 +133,6 @@ class CharacterDetailViewController: UIViewController {
         return tableview
     }()
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -147,7 +145,7 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -185,7 +183,7 @@ class CharacterDetailViewController: UIViewController {
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-        
+            
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -215,7 +213,7 @@ class CharacterDetailViewController: UIViewController {
         self.contentTableView.delegate = self
         self.contentTableView.dataSource = self
         self.contentTableView.register(DetailContentTableViewCell.self, forCellReuseIdentifier: tableCellIdentifier)
-
+        
         closeButton.addTarget(self, action: #selector(dismissView), for: .allTouchEvents)
         
         
@@ -265,10 +263,10 @@ class CharacterDetailViewController: UIViewController {
             comicsCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             comicsCollectionView.topAnchor.constraint(equalTo: comicsTitleLabel.bottomAnchor, constant: 18),
             comicsCollectionView.heightAnchor.constraint(equalToConstant: 300),
-        
+            
         ])
         
-       
+        
     }
     
     func setupData() {
@@ -276,7 +274,7 @@ class CharacterDetailViewController: UIViewController {
         if let characterDetail = self.character {
             let imageUrl  = characterDetail.thumbnail.path+"."+characterDetail.thumbnail.thumbnailExtension
             characterImageView.imageFromServerURL(urlString: imageUrl, PlaceHolderImage: UIImage())
-    
+            
             characterNameLabel.setLabelAttributedText(name: characterDetail.name , fontSize: 27, fontWeight: .semibold, lineSpacing: 1.1851851851851851)
             
             
@@ -299,7 +297,7 @@ class CharacterDetailViewController: UIViewController {
                 tableViewHeight += 108
             }
         }
-
+        
         NSLayoutConstraint.activate([
             contentTableView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0),
             contentTableView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
@@ -314,7 +312,7 @@ class CharacterDetailViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-
+    
 }
 
 
@@ -327,7 +325,7 @@ extension CharacterDetailViewController : UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = comicsCollectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as! ComicsCollectionViewCell
         cell.cellViewModel = self.viewModel.comicsCellViewModels[indexPath.row]
-       
+        
         return cell
     }
     
@@ -361,13 +359,13 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setLabelAttributedText(name: self.viewModel.detailsContent[section].name, fontSize: 27, fontWeight: .semibold, lineSpacing: 1.1851851851851851)
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        label.textColor = ThemeColors.customGrey07Color
         headerView.addSubview(label)
         NSLayoutConstraint.activate([
-        label.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 18),
-        label.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -18),
-        label.topAnchor.constraint(equalTo: headerView.topAnchor),
-        label.bottomAnchor.constraint(equalTo: headerView.bottomAnchor)
+            label.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 18),
+            label.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -18),
+            label.topAnchor.constraint(equalTo: headerView.topAnchor),
+            label.bottomAnchor.constraint(equalTo: headerView.bottomAnchor)
         ])
         
         return headerView
@@ -376,6 +374,5 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 108
     }
-    
     
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - UrlElement
 struct URLElement: Codable {
     let type: String
     let url: String

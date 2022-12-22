@@ -47,8 +47,6 @@ class NetworkRequests {
         
     }
     
-    
-    
     // MARK: Methods
     
     /**
@@ -89,11 +87,12 @@ class NetworkRequests {
             
         }).resume()
     }
-
+    
+    // MARK: - Character List
     func getCharacterList(nextResults: Int, completionHandler: @escaping (Result<([Character])>) -> Void) {
         let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
         let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)?"+"limit=\(Constants.limitPerPage)"+"&offset=\(nextResults)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
-   
+        
         self.request(baseUrl: url, encode: true) { (data) in
             
             do {
@@ -105,9 +104,10 @@ class NetworkRequests {
             }
         }
     }
-
+    
+    // MARK: - Character By Search
     func getCharacterBySearching(characterString: String, nextResults: Int, completionHandler: @escaping (Result<(MarvelApiData)>) -> Void) {
-       
+        
         let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
         let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)?nameStartsWith=\(characterString)"+"&limit=\(Constants.limitPerPage)"+"&offset=\(nextResults)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
         
@@ -121,11 +121,12 @@ class NetworkRequests {
             }
         }
     }
-
+    
+    // MARK: - Comics For Character
     func getComicsForCharacter(characterId: Int, limit: Int, offset: Int,  completionHandler: @escaping (Result<([ComicResult])>) -> Void) {
         let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
         let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)/\(characterId)/comics?"+"limit=\(limit)"+"&offset=\(offset)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
-   
+        
         self.request(baseUrl: url, encode: true) { (data) in
             
             do {
@@ -138,10 +139,11 @@ class NetworkRequests {
         }
     }
     
+    // MARK: - Events for Character
     func getEventsForCharacter(characterId: Int, limit: Int, offset: Int,  completionHandler: @escaping (Result<([EventsResult])>) -> Void) {
         let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
         let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)/\(characterId)/events?"+"limit=\(limit)"+"&offset=\(offset)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
-   
+        
         self.request(baseUrl: url, encode: true) { (data) in
             
             do {
@@ -154,10 +156,11 @@ class NetworkRequests {
         }
     }
     
+    // MARK: - Stories for Character
     func getStoriesForCharacter(characterId: Int, limit: Int, offset: Int,  completionHandler: @escaping (Result<([StoryResult])>) -> Void) {
         let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
         let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)/\(characterId)/stories?"+"limit=\(limit)"+"&offset=\(offset)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
-   
+        
         self.request(baseUrl: url, encode: true) { (data) in
             
             do {
@@ -170,10 +173,11 @@ class NetworkRequests {
         }
     }
     
+    // MARK: - Series for Character
     func getSeriesForCharacter(characterId: Int, limit: Int, offset: Int,  completionHandler: @escaping (Result<([SeriesResult])>) -> Void) {
         let hash = MD5(string: "1"+apiKeyPrivate+apiKeyPublic)
         let url = "\(Constants.mainUrl)\(UrlEndpoints.charactersEndpoint)/\(characterId)/series?"+"limit=\(limit)"+"&offset=\(offset)"+"&apikey=\(self.apiKeyPublic)&ts=1&hash=\(hash)"
-   
+        
         self.request(baseUrl: url, encode: true) { (data) in
             
             do {
@@ -186,10 +190,10 @@ class NetworkRequests {
         }
     }
     
-    
+    // MARK: - MD5
     func MD5(string: String) -> String {
         let digest = Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data())
-
+        
         return digest.map {
             String(format: "%02hhx", $0)
         }.joined()

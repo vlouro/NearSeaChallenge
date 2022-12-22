@@ -8,7 +8,7 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-
+    
     let scrollView : UIScrollView = {
         let scrView = UIScrollView()
         scrView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,15 +55,15 @@ class AboutViewController: UIViewController {
         let lbl = UILabel()
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
-        lbl.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        lbl.textColor = ThemeColors.customGrey07Color
         lbl.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         lbl.textAlignment = .left
         let textContent = "Charismatic, agile, strong, united, passionate and with a lot of wisdom, we are all Heroes in our own way."
         let textString = NSMutableAttributedString(
-          string: textContent,
-          attributes: [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
-          ]
+            string: textContent,
+            attributes: [
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
+            ]
         )
         let textRange = NSRange(location: 0, length: textString.length)
         let paragraphStyle = NSMutableParagraphStyle()
@@ -80,7 +80,7 @@ class AboutViewController: UIViewController {
         let lbl = UILabel()
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
-        lbl.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        lbl.textColor = ThemeColors.customGrey07Color
         lbl.font = UIFont.systemFont(ofSize: 27, weight: .semibold)
         lbl.text = "Overview"
         lbl.textAlignment = .left
@@ -94,13 +94,13 @@ class AboutViewController: UIViewController {
         let lbl = UILabel()
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
-        lbl.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        lbl.textColor = ThemeColors.customGrey07Color
         let textContent = "In fact, what makes us heroes are not supernatural forces, but the small gestures and attitudes that help to improve the daily lives of all of us and those around us. Heroes from December 8th to 11th at Parque das Nações – Lisbon."
         let textString = NSMutableAttributedString(
-          string: textContent,
-          attributes: [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)
-          ]
+            string: textContent,
+            attributes: [
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)
+            ]
         )
         let textRange = NSRange(location: 0, length: textString.length)
         let paragraphStyle = NSMutableParagraphStyle()
@@ -117,7 +117,7 @@ class AboutViewController: UIViewController {
         let lbl = UILabel()
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
-        lbl.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        lbl.textColor = ThemeColors.customGrey07Color
         lbl.font = UIFont.systemFont(ofSize: 27, weight: .semibold)
         lbl.text = "Top selling items"
         lbl.textAlignment = .left
@@ -131,13 +131,13 @@ class AboutViewController: UIViewController {
         lbl.lineBreakMode = .byWordWrapping
         lbl.numberOfLines = 0
         lbl.textAlignment = .left
-        lbl.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        lbl.textColor = ThemeColors.customGrey07Color
         let textContent = "market.epopculture.com"
         let textString = NSMutableAttributedString(
-          string: textContent,
-          attributes: [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)
-          ]
+            string: textContent,
+            attributes: [
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)
+            ]
         )
         let textRange = NSRange(location: 0, length: textString.length)
         let paragraphStyle = NSMutableParagraphStyle()
@@ -215,10 +215,5 @@ class AboutViewController: UIViewController {
         
         
     }
-    
-   
-    
-    
-
 
 }

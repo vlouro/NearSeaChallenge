@@ -9,7 +9,7 @@ import UIKit
 
 class ComicsCollectionViewCell: UICollectionViewCell {
     
-   let comicImageView: UIImageView = {
+    let comicImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 10
@@ -23,7 +23,7 @@ class ComicsCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        label.textColor = ThemeColors.customGrey07Color
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,8 +48,8 @@ class ComicsCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupViews() {
-            contentView.addSubview(comicImageView)
-            contentView.addSubview(comicNameLabel)
+        contentView.addSubview(comicImageView)
+        contentView.addSubview(comicNameLabel)
     }
     
     private func setupLayouts() {
@@ -64,7 +64,7 @@ class ComicsCollectionViewCell: UICollectionViewCell {
             comicNameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
             
         ])
-
+        
     }
     
     override func prepareForReuse() {

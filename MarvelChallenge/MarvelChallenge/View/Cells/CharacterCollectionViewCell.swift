@@ -57,11 +57,11 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupViews() {
-            contentView.addSubview(characterImageView)
-            contentView.addSubview(nameContentView)
-            nameContentView.addBlur()
-            nameContentView.addSubview(characterNameLabel)
-            
+        contentView.addSubview(characterImageView)
+        contentView.addSubview(nameContentView)
+        nameContentView.addBlur()
+        nameContentView.addSubview(characterNameLabel)
+        
     }
     
     private func setupLayouts() {
@@ -92,6 +92,4 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         characterNameLabel.attributedText = nil
         characterImageView.image = nil
     }
-    
-    
 }

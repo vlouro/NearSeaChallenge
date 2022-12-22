@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Comics
 struct Comics: Codable {
     let available: Int
     let collectionURI: String

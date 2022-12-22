@@ -63,9 +63,9 @@ class CharacterViewModel: NSObject {
                 }
                 self.characterSearchCellViewModels.append(contentsOf: vms)
                 self.nextPageForSearch += 20
-              
+                
                 completionHandler(true)
-               
+                
                 break
             case .error(_):
                 print("There was an error")
@@ -75,37 +75,37 @@ class CharacterViewModel: NSObject {
     }
     
     func getMoreCharacters(completionHandler: @escaping (Bool) -> Void) {
-            if !self.isLoading || !endOfPages {
-                self.isLoading = true
-                DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
-                    NetworkRequests.shared.getCharacterList(nextResults: self.nextPage) { (result) in
-                        switch result {
-                            
-                        case let .success(characterList):
-                            if characterList.count == 0 {
-                                completionHandler(false)
-                                self.endOfPages = true
-                            }
-                            self.character.append(contentsOf: characterList)
-                            var vms = [CharacterCellViewModel]()
-                            for character in characterList {
-                                vms.append(self.createCharacterCellModel(character: character))
-                            }
-                            self.characterCellViewModels.append(contentsOf: vms)
-                            self.nextPage += 20
-                            
-                            if characterList.count > 0 {
-                                completionHandler(true)
-                            }
-                            
-                            break
-                        case .error(_):
-                            print("There was an error")
+        if !self.isLoading || !endOfPages {
+            self.isLoading = true
+            DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
+                NetworkRequests.shared.getCharacterList(nextResults: self.nextPage) { (result) in
+                    switch result {
+                        
+                    case let .success(characterList):
+                        if characterList.count == 0 {
                             completionHandler(false)
+                            self.endOfPages = true
                         }
+                        self.character.append(contentsOf: characterList)
+                        var vms = [CharacterCellViewModel]()
+                        for character in characterList {
+                            vms.append(self.createCharacterCellModel(character: character))
+                        }
+                        self.characterCellViewModels.append(contentsOf: vms)
+                        self.nextPage += 20
+                        
+                        if characterList.count > 0 {
+                            completionHandler(true)
+                        }
+                        
+                        break
+                    case .error(_):
+                        print("There was an error")
+                        completionHandler(false)
                     }
                 }
             }
+        }
     }
     
     func createCharacterCellModel(character: Character) -> CharacterCellViewModel {

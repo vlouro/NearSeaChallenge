@@ -27,11 +27,11 @@ class CharacterDetailViewModel: NSObject {
     var storyCellViewModels = [DetailContentCellViewModel]()
     var seriesCellViewModels = [DetailContentCellViewModel]()
     var eventsCellViewModels = [DetailContentCellViewModel]()
-
+    
     func getComics(characterId: Int, completionHandler: @escaping (Bool) -> Void)  {
         NetworkRequests.shared.getComicsForCharacter(characterId: characterId, limit: 5, offset: 0, completionHandler: { (result) in
             switch result {
-              //
+                //
             case let .success(comicsList):
                 self.comics = comicsList
                 var vms = [ComicsCellViewModel]()
@@ -52,17 +52,17 @@ class CharacterDetailViewModel: NSObject {
                 completionHandler(false)
             }
         })
-                                                     
+        
     }
     
     
     func downloadDetails(characterId: Int, completionHandler: @escaping (Bool) -> Void) {
         let dispatchGroup = DispatchGroup()
-
+        
         dispatchGroup.enter()
         NetworkRequests.shared.getStoriesForCharacter(characterId: characterId, limit: 4, offset: 0) { (result) in
             switch result {
-              //
+                //
             case let .success(storyList):
                 self.stories = storyList
                 var vms = [DetailContentCellViewModel]()
@@ -89,7 +89,7 @@ class CharacterDetailViewModel: NSObject {
         dispatchGroup.enter()
         NetworkRequests.shared.getSeriesForCharacter(characterId: characterId, limit: 4, offset: 0) { (result) in
             switch result {
-              //
+                //
             case let .success(seriesList):
                 self.series = seriesList
                 var vms = [DetailContentCellViewModel]()
@@ -117,7 +117,7 @@ class CharacterDetailViewModel: NSObject {
         dispatchGroup.enter()   // <<---
         NetworkRequests.shared.getEventsForCharacter(characterId: characterId, limit: 4, offset: 0) { (result) in
             switch result {
-              //
+                //
             case let .success(eventsList):
                 self.events = eventsList
                 var vms = [DetailContentCellViewModel]()
@@ -140,14 +140,14 @@ class CharacterDetailViewModel: NSObject {
                 }
             }
         }
-
+        
         dispatchGroup.notify(queue: .main) {
             completionHandler(true)
         }
     }
     
     
-
+    
     
     func createComicCellModel(comic: ComicResult) -> ComicsCellViewModel {
         

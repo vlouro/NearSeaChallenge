@@ -35,7 +35,7 @@ struct EventsResult: Codable {
     let stories: Stories
     let comics, series: Characters
     let next, previous: Next
-
+    
     enum CodingKeys: String, CodingKey {
         case id, title
         case resultDescription = "description"
@@ -75,7 +75,7 @@ struct CreatorsItem: Codable {
 struct Thumbnail: Codable {
     let path: String
     let thumbnailExtension: String
-
+    
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"

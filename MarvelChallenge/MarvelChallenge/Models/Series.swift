@@ -37,7 +37,7 @@ struct SeriesResult: Codable {
     let stories: Stories
     let comics, events: Characters
     let next, previous: SeriesSummary?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, title
         case resultDescription = "description"

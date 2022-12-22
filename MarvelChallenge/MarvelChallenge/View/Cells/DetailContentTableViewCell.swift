@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailContentTableViewCell: UITableViewCell {
-
+    
     private let detailImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFill
@@ -65,9 +65,9 @@ class DetailContentTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-            contentView.addSubview(detailImageView)
-            contentView.addSubview(nameLabel)
-            contentView.addSubview(descriptionLabel)
+        contentView.addSubview(detailImageView)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(descriptionLabel)
     }
     
     private func setupLayouts() {
@@ -76,7 +76,7 @@ class DetailContentTableViewCell: UITableViewCell {
             detailImageView.widthAnchor.constraint(equalToConstant: 52),
             detailImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             detailImageView.heightAnchor.constraint(equalToConstant: 78),
-       
+            
             nameLabel.leftAnchor.constraint(equalTo: detailImageView.rightAnchor, constant: 9),
             nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -18),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18),
@@ -87,12 +87,12 @@ class DetailContentTableViewCell: UITableViewCell {
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18)
         ])
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         descriptionLabel.attributedText = nil
         nameLabel.attributedText = nil
         detailImageView.image = nil
     }
-
+    
 }
